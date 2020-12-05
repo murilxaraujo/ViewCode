@@ -1,3 +1,3 @@
 # ViewCode
 
-A description of this package.
+ViewCode made easy
