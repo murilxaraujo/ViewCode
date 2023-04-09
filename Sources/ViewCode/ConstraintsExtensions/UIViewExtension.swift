@@ -18,9 +18,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func top(toTopOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.topAnchor.constraint(equalTo: view.topAnchor, constant: constant)
+    @discardableResult
+    public func top(toTopOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: topAnchor.constraint(equalTo: view.topAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the top of the view to the bottom of a given `view`.
@@ -32,9 +32,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func top(toBottomOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.topAnchor.constraint(equalTo: view.bottomAnchor, constant: constant)
+    @discardableResult
+    public func top(toBottomOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: topAnchor.constraint(equalTo: view.bottomAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the top of the view to the center of a given `view`.
@@ -46,9 +46,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func top(toCenterOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.topAnchor.constraint(equalTo: view.centerYAnchor, constant: constant)
+    @discardableResult
+    public func top(toCenterOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: topAnchor.constraint(equalTo: view.centerYAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the bottom of the view to the top of a given `view`.
@@ -60,9 +60,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func bottom(toTopOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.bottomAnchor.constraint(equalTo: view.topAnchor, constant: constant)
+    @discardableResult
+    public func bottom(toTopOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: bottomAnchor.constraint(equalTo: view.topAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the bottom of the view to the bottom of a given `view`.
@@ -74,9 +74,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func bottom(toBottomOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: constant)
+    @discardableResult
+    public func bottom(toBottomOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the bottom of the view to the center of a given `view`.
@@ -88,9 +88,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func bottom(toCenterOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: constant)
+    @discardableResult
+    public func bottom(toCenterOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: constant), active: true)
     }
     
     /// This function constraints the left of the view to the left of a given `view`.
@@ -102,9 +102,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func left(toLeftOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.leftAnchor.constraint(equalTo: view.leftAnchor, constant: constant)
+    @discardableResult
+    public func left(toLeftOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: leftAnchor.constraint(equalTo: view.leftAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the left of the view to the right of a given `view`.
@@ -116,9 +116,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func left(toRightOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.leftAnchor.constraint(equalTo: view.rightAnchor, constant: constant)
+    @discardableResult
+    public func left(toRightOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: leftAnchor.constraint(equalTo: view.rightAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the left of the view to the center of a given `view`.
@@ -130,9 +130,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func left(toCenterOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.leftAnchor.constraint(equalTo: view.centerXAnchor, constant: constant)
+    @discardableResult
+    public func left(toCenterOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: leftAnchor.constraint(equalTo: view.centerXAnchor, constant: constant), active: active)
     }
     
     
@@ -145,9 +145,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func right(toLeftOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.rightAnchor.constraint(equalTo: view.leftAnchor, constant: constant)
+    @discardableResult
+    public func right(toLeftOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: rightAnchor.constraint(equalTo: view.leftAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the right of the view to the right of a given `view`.
@@ -159,9 +159,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func right(toRightOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.rightAnchor.constraint(equalTo: view.rightAnchor, constant: constant)
+    @discardableResult
+    public func right(toRightOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: rightAnchor.constraint(equalTo: view.rightAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the right of the view to the center of a given `view`.
@@ -173,9 +173,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func right(toCenterOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: constant)
+    @discardableResult
+    public func right(toCenterOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: rightAnchor.constraint(equalTo: view.centerXAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the leading of the view to the leading of a given `view`.
@@ -187,9 +187,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func leading(toLeadingOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: constant)
+    @discardableResult
+    public func leading(toLeadingOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the leading of the view to the trailing of a given `view`.
@@ -201,9 +201,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func leading(toTrailingOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: constant)
+    @discardableResult
+    public func leading(toTrailingOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the trailing of the view to the trailing of a given `view`.
@@ -215,9 +215,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func trailing(toTrailingOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: constant)
+    @discardableResult
+    public func trailing(toTrailingOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the trailing of the view to the leading of a given `view`.
@@ -229,9 +229,9 @@ extension UIView {
     ///
     /// - Parameter view: The view to be constrained to.
     /// - Returns: the view in which the method is being called over.
-    public func trailing(toLeadingOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: constant)
+    @discardableResult
+    public func trailing(toLeadingOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: constant), active: active)
     }
     
     /// This function constraints the height of the view to a given `constant`.
@@ -242,9 +242,9 @@ extension UIView {
     ///
     /// - Parameter constant: The value of the height of the view.
     /// - Returns: the view in which the method is being called over.
-    public func height(toConstant constant: CGFloat) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.heightAnchor.constraint(equalToConstant: constant)
+    @discardableResult
+    public func height(toConstant constant: CGFloat, active: Bool = true) -> Constraint {
+        return build(constraint: heightAnchor.constraint(equalToConstant: constant), active: active)
     }
     
     /// This function constraints the height of the view to the height of a given `view`.
@@ -255,9 +255,9 @@ extension UIView {
     ///
     /// - Parameter view: The view used as a height base for the anchor.
     /// - Returns: the view in which the method is being called over.
-    public func height(toHeightOf view: UIView) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.heightAnchor.constraint(equalTo: view.heightAnchor)
+    @discardableResult
+    public func height(toHeightOf view: UIView, active: Bool = true) -> Constraint {
+        return build(constraint: heightAnchor.constraint(equalTo: view.heightAnchor), active: active)
     }
     
     /// This function constraints the width of the view to a given `constant`.
@@ -268,9 +268,9 @@ extension UIView {
     ///
     /// - Parameter constant: The value of the width of the view.
     /// - Returns: the view in which the method is being called over.
-    public func width(toConstant constant: CGFloat) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.widthAnchor.constraint(equalToConstant: constant)
+    @discardableResult
+    public func width(toConstant constant: CGFloat, active: Bool = true) -> Constraint {
+        return build(constraint: widthAnchor.constraint(equalToConstant: constant), active: active)
     }
     
     /// This function constraints the width of the view to the height of a given `view`.
@@ -281,9 +281,9 @@ extension UIView {
     ///
     /// - Parameter view: The view used as a width base for the anchor.
     /// - Returns: the view in which the method is being called over.
-    public func width(toWidthOf view: UIView) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.widthAnchor.constraint(equalTo: view.widthAnchor)
+    @discardableResult
+    public func width(toWidthOf view: UIView, active: Bool = true) -> Constraint {
+        return build(constraint: widthAnchor.constraint(equalTo: view.widthAnchor), active: active)
     }
     
     /// This function disables the auto resizing masks translation into constraints.
@@ -299,10 +299,10 @@ extension UIView {
     ///
     /// - Parameter view: The view used as a base for the anchor.
     public func constraint(to view: UIView) {
-        self.top(toTopOf: view).activate()
-        self.left(toLeftOf: view).activate()
-        self.right(toRightOf: view).activate()
-        self.bottom(toBottomOf: view).activate()
+        self.top(toTopOf: view)
+        self.left(toLeftOf: view)
+        self.right(toRightOf: view)
+        self.bottom(toBottomOf: view)
     }
 }
 
@@ -316,9 +316,9 @@ extension UIView {
     ///
     /// - Parameter view: The view used as a bottom base for the anchor.
     /// - Returns: the view in which the method is being called over.
-    public func top(greaterThanOrEqualToBottomOf view: UIView, constant: CGFloat = 0) -> Constraint {
-        self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.topAnchor.constraint(greaterThanOrEqualTo: view.bottomAnchor, constant: constant)
+    @discardableResult
+    public func top(greaterThanOrEqualToBottomOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: topAnchor.constraint(greaterThanOrEqualTo: view.bottomAnchor, constant: constant), active: active)
     }
     
     // This function constraints the bottom of the view to be less or equal to the top of a given `view`.
@@ -329,8 +329,16 @@ extension UIView {
     ///
     /// - Parameter view: The view used as a top base for the anchor.
     /// - Returns: the view in which the method is being called over.
-    public func bottom(lessThanOrEqualToTopOf view: UIView, constant: CGFloat = 0) -> Constraint {
+    @discardableResult
+    public func bottom(lessThanOrEqualToTopOf view: UIView, constant: CGFloat = 0, active: Bool = true) -> Constraint {
+        return build(constraint: bottomAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: constant), active: active)
+    }
+}
+
+fileprivate extension UIView {
+    func build(constraint: Constraint, active: Bool) -> Constraint {
         self.disableAutoLayoutMasksTranslationIntoConstraints()
-        return self.bottomAnchor.constraint(lessThanOrEqualTo: view.topAnchor, constant: constant)
+        active ? constraint.activate() : constraint.deactivate()
+        return constraint
     }
 }

@@ -20,18 +20,18 @@ extension Constraint {
     }
     
     @discardableResult
-    public func activated() -> Constraint {
+    public func activated() -> Self {
         self.isActive = true
         return self
     }
     
     @discardableResult
-    public func deactivated() -> Constraint {
+    public func deactivated() -> Self {
         self.isActive = false
         return self
     }
     
-    public func with(priorityOf priority: UILayoutPriority) -> Constraint {
+    public func with(priorityOf priority: UILayoutPriority) -> Self {
         self.priority = priority
         return self
     }
